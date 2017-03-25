@@ -42,17 +42,28 @@
 }
 
 iframe {
-  width:  96%;
-  height: 74%;
+  width:  99%;
+  height: 72%;
 }
 
 .before-iframe {
-  height: 14%;
+  height: 12%;
   text-align: center;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-iframe {
+  text-align: center;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height:  100%;
 }
 
 .after-iframe {
-  height: 9%;
+  height: 6%;
   text-align: center;
 }
 
@@ -60,4 +71,8 @@ body {
   background: navy;
   color: #e6eaf8;
   font-family: "Open Sans", Helvetica, sans-serif;
+}
+
+a {
+  color: yellow;
 }
