@@ -28,6 +28,34 @@ document.addEventListener("DOMContentLoaded", function(event) {
     };
     var next     = create_button('&#9654;&#xfe0f;');
     var previous = create_button('&#9664;&#xfe0f;');
+    var tips     = document.getElementsByClassName('tip');
+    var make_tip_button = function (tip) {
+        var html = tip.innerHTML;
+        tip.className = 'tip-button';
+        tip.innerHTML = "TIP";
+        tip.title     = "Click to get a tip. Click again to get rid of the tip.";
+        tip.addEventListener('click',
+                             function () {
+                                 var popup    = document.createElement('div');
+                                 var contents = document.createElement('div');
+                                 var remove_popup = function () {
+                                                        popup.remove();
+                                                        document.body.removeEventListener('click', remove_popup);
+                                                    };
+                                 popup.className = 'popup';
+                                 contents.innerHTML = html;
+                                 popup.appendChild(contents);
+                                 popup.title = "Click to get rid of me.";
+                                 document.body.appendChild(popup);
+                                 setTimeout(function () {
+                                     document.body.addEventListener('click', remove_popup);
+                                 });                                 
+                             });
+    };
+    var i;
+    for (i = 0; i < tips.length; i++) {
+        make_tip_button(tips[i]);
+    }
     document.body.insertBefore(previous, document.body.firstChild);
     document.body.insertBefore(next,     document.body.firstChild);
     next    .addEventListener('click', function () {
