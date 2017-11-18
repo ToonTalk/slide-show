@@ -14,13 +14,13 @@ AI researchers attempts to give computers the abilities to perceive, to solve pr
 shed light on intelligence beyond what studying human and animal psychology can.</p>
 
 <p>AI raises many questions:</p>
-<ul><li>What is the future of work?</li></ul>
+<ul><li>What is the future of work?</li>
 <li>How dangerous is AI?</li>
 <li>How to ensure AIs make ethical choices?</li>
-<li>Would you want a robot to be your child’s best friend?</li>
+<li>Would you want a robot to be your child's best friend?</li></ul>
 <h3>Ways of teaching AI</h3>
 <p>Broadly there are three approaches</p>
-<ol><li>Readings, lectures, and discussions about AI’s history, ideas, and technologies</li>
+<ol><li>Readings, lectures, and discussions about AI's history, ideas, and technologies</li>
 <li>Readings, lectures, and discussions about social issues impacted by AI</li>
 <li>Supporting hands-on experiences creating AI apps and artefacts</li></ol>
 
@@ -33,7 +33,14 @@ then even beginners can use them in their creations.</p>
 Is the ability to transform text into spoken speech really an example of AI?
 Humans need to spend a long time learning to read (out loud).
 But reading involves character recognition and spelling as well as comprehension.
-When a computer produces speech none of that is involved. Before discussing what is involved in synthesising speech let’s look at how it can be used by students.</p>
+When a computer produces speech none of that is involved.
+Is this an aspect of intelligent behaviour or it is just like a parrot speaking?
+Perhaps a good topic for students to discuss.
+And note that <a href="https://en.wikipedia.org/wiki/Alex_(parrot)" target="_blank">Alex the parrot</a> clearly did more than "parroting" speech.</p>
+
+<p>Before discussing what is technically involved in synthesising speech let's look at how it can be used by students.
+Let's start with the simplest program block for speaking. Click on it to try it out.
+(Currently only works well in Chrome.)</p>
 
 <div style="border: 1px solid rgb(201, 0, 1); overflow: hidden; margin: 15px auto; width: 480px; height: 70px"> 
 <iframe scrolling="no"
@@ -42,6 +49,34 @@ When a computer produces speech none of that is involved. Before discussing what
 </iframe> 
 </div>
 
+<h4>How does this work?</h4>
+>p>The Web is full of explanations of how speech synthesis works. 
+Microsoft has this <a href="https://msdn.microsoft.com/en-us/library/office/hh361668%28v=office.14%29.aspx?f=255&MSPPError=-2147217396" target="_blank">short explanation</a>.
+<i>Explain that Stuff</i> has a <href="http://www.explainthatstuff.com/how-speech-synthesis-works.html" target="_blank">much longer explanation including a history fo speech synthesis</a>.
+And there is always <a href="https://en.wikipedia.org/wiki/Speech_synthesis" target="_blank">Wikipedia's entry</a>.
+</p>
+
+<h4>Problems combining speech and sound effects</h4>
+<p>Suppose one wanted the computer to speech, be interupted by a door bell, and respond accordingly.
+Try clicking this and you'll hear there is a problem:</p>
+
+<div style="border: 1px solid rgb(201, 0, 1); overflow: hidden; margin: 15px auto; width: 480px; height: 140px"> 
+<iframe scrolling="no"
+        src="https://snap.berkeley.edu/snapsource/snap.html#present:Username=toontalk&ProjectName=single%20doorbell%20problem&noRun&noExitWarning&editMode&hideControls"
+        style="border: 0px none; margin-left: -200px; height: 800px; margin-top: -120px; width: 1200px;"> 
+</iframe> 
+</div>
+
+<p>The problem is because the way the speak block works is that it tells the browswer to begin speaking and then continues with the next action.
+What we want is to have the door bell sound played <i>after</i> the first utterance is finished.
+For this we need a slightly more complex block that accepts actions to do after speaking:</p>
+
+<div style="border: 1px solid rgb(201, 0, 1); overflow: hidden; margin: 15px auto; width: 580px; height: 140px"> 
+<iframe scrolling="no"
+        src="https://snap.berkeley.edu/snapsource/snap.html#present:Username=toontalk&ProjectName=single%20doorbell%20fix&noRun&noExitWarning&editMode&hideControls"
+        style="border: 0px none; margin-left: -200px; height: 800px; margin-top: -120px; width: 1300px;"> 
+</iframe> 
+</div>
 
 
 
